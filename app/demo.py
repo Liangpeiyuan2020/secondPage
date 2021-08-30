@@ -9,7 +9,7 @@ import requests
 import execjs
 
 
-def main(id):
+def main2(id):
 
     import warnings
     warnings.filterwarnings("ignore")
@@ -71,12 +71,12 @@ def askURL(url):
     login_url = "https://authserver.szu.edu.cn/authserver/login?service=http%3A%2F%2Fwww1%2Eszu%2Eedu%2Ecn%2Fmanage%2Fcaslogin%2Easp%3Frurl%3D%2F"
     session1.post(login_url, headers=headers, data=data,verify=False)
 
-    askRes2 = session1.get("https://www1.szu.edu.cn/board/infolist.asp", headers=headers, verify=False)
+    # askRes2 = session1.get("https://www1.szu.edu.cn/board/infolist.asp", headers=headers, verify=False)
 
-    askRes = session1.get("https://www1.szu.edu.cn/board/infolist.asp", headers=headers,verify=False)
+    askRes = session1.get(url, headers=headers,verify=False)
     askRes.encoding = 'gbk'
     # print(askRes.text)
     return askRes.text
 if __name__=="__main__":
 
-    print(main(id))
+    print(main2(456180))
